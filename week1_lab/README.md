@@ -194,16 +194,9 @@ public class Comments {
 
 ```
 
-<table>
-<tr>
-<th>Expected Output</th>
-<th>Actual Output</th>
-</tr>
-<tr>
-<td>apple<br>pear<br>watermelon<br><br></td>
-<td>apple<br>pear<br>watermelon<br>peach</td>
-</tr>
-</table>
+| Expected Output                     | Actual Output                        |
+| ----------------------------------- | ------------------------------------ |
+| apple<br>pear<br>watermelon<br><br> | apple<br>pear<br>watermelon<br>peach |
 
 - The print statements for "orange", "lemon", and "banana" are commented out and
   do not execute.
@@ -234,16 +227,9 @@ public class Fixit {
 }
 ```
 
-<table>
-<tr>
-<th>Expected Output</th>
-<th>Actual Output</th>
-</tr>
-<tr>
-<td>ship<br>airplane<br>tank</td>
-<td>ship<br>tank<br><br></td>
-</tr>
-</table>
+| Expected Output          | Actual Output        |
+| ------------------------ | -------------------- |
+| ship<br>airplane<br>tank | ship<br>tank<br><br> |
 
 Run the program to view the output. The second print statement is commented out
 so the program does not produce the expected output.
@@ -255,8 +241,8 @@ so the program does not produce the expected output.
    ![compiler displays warning symbol near syntax error](images/compiler_warning.png)
 3. Try to run the program **without** fixing the error. A warning message
    appears indicating the build failed. Click "Continue" to execute the code
-   anyway. The program fails and an error message about the missing semicolon is
-   displayed in the terminal window.
+   anyway. The program crashes and an error message about the missing semicolon
+   is displayed in the terminal window.
 
 Every statement in the `main` method must end with a semicolon. Let's fix the
 syntax error so the program can execute.
@@ -290,16 +276,9 @@ public class Printing {
 - `System.out.print` : Does not append a newline character. Subsequent output
   appears on the same line.
 
-<table>
-<tr>
-<th>Expected Output</th>
-<th>Actual Output</th>
-</tr>
-<tr>
-<td>red <br>green blue <br>pink <br>yellow</td>
-<td>red <br>green blue <br>pink yellow<br><br></td>
-</tr>
-</table>
+| Expected Output                        | Actual Output                              |
+| -------------------------------------- | ------------------------------------------ |
+| red <br>green blue <br>pink <br>yellow | red <br>green blue <br>pink yellow<br><br> |
 
 Run the program to view the output. In the expected output, "yellow" appears on
 a separate line from "pink". Let's fix the program to produce the expected
@@ -312,18 +291,79 @@ output:
 
 Save and close any open files.
 
-## Task 6 - MathematicalExpression.java
+## Task 6 - SelfIntroduction.java
 
-Click on `MathematicalExpression.java` to open the file in the editor.
+Click on `SelfIntroduction.java` to open the file in the editor.
 
 ```java
-public class MathematicalExpression {
+/**
+ * SelfIntroduction class demonstrates at least 4 print statements.
+ *
+ * @author First Last
+ */
+public class SelfIntroduction {
+    public static void main(String[] args) {
+        // TODO: Add print statements
 
+    }
+}
+```
+
+The `SelfIntroduction` class contains a `main` method with an empty block for
+the method body. The class also contains JavaDoc comment before the class
+header. JavaDoc is used to generate documentation in HTML format from Java
+source code. We'll learn more about JavaDoc in a later lesson.
+
+1. Edit the JavaDoc comment to update the author tag with your first and last
+   name.
+2. Edit the `main` method to add print statements to introduce yourself. The
+   program should produce at least 4 lines of output.
+3. Run `SelfIntroduction` to view your output. Fix any syntax errors that may
+   arise.
+4. Run `SelfIntroductionTest` to confirm your solution passes the Junit test,
+   which is designed to count the number of lines of output.
+
+Save and close any open files.
+
+## Task 7 - MathematicalExpression.java
+
+A `String` is a sequence of characters surrounded by double quotes. An unquoted
+arithmetic expression evaluates to a numeric value.
+
+| Expression      |                               Value |
+| --------------- | ----------------------------------: |
+| "2 + 3 \* 8 = " | &nbsp; &nbsp; &nbsp;"2 + 3 \* 8 = " |
+| 2 + 3 \* 8 =    |                                  26 |
+
+In this task, you will create a new Java class named `MathExpression`, along
+with a new Junit test class named `MathExpressionTest`.
+
+1. In the Explorer, right-click on the "java" folder in
+   `week1_lab/src/main/java` and then select `New Java File > Class` from the
+   popup menu. IMPORTANT: Make sure you right clicked on the word "java" and not
+   "main", otherwise the new class will be created in the wrong folder.
+   <img src="images/new_class.png" alt="create new class" width="400">
+2. Enter the class name `MathExpression`. Spelling and case matter.
+
+   <img src="images/new_class_name.png" alt="create new class" width="200">
+
+3. The editor view will contain the new Java class. You should also see
+   `MathExpression.java` in the Explorer at the **same level of indentation** as
+   the other Java files. If not, right click to delete it and create it again,
+   or try dragging the file it into the `week1_lab/src/main/java` folder.
+
+   <img src="images/new_class_explorer_view.png" alt="new class in editor view" width=300>
+
+4. Edit the code to add a `main` method as shown below. Notice the first
+   statement prints a quoted string, while the second statement prints the value
+   of a math expression.
+
+```java
+public class MathExpression {
     public static void main(String[] args) {
         System.out.print("2 + 3 * 8 = ");
         System.out.println(2 + 3 * 8);
     }
-
 }
 ```
 
@@ -333,92 +373,62 @@ Run the program and confirm the output as shown below:
 2 + 3 * 8 = 26
 ```
 
-A `String` is a sequence of characters surrounded by double quotes. An unquoted
-arithmetic expression evaluates to a numeric value.
+Assume we would like to evolve the program to produce the expected output shown
+below:
 
-<table>
-<tr>
-<td>Expression</td><td>Value</td>
-</tr>
-<tr>
-<td>"2 + 3 * 8 = "</td><td>"2 + 3 * 8 = "</td>
-</tr>
-<tr>
-<td>2 + 3 * 8</td><td>26</td>
-</tr>
-</table>
-
-<br>
-
-<table>
-<tr>
-<th>Expected Output</th>
-<th>Actual Output</th>
-</tr>
-<tr>
-<td>(2 + 3) * 8 = 40</td>
-<td>2 + 3 * 8 = 26</td>
-</tr>
-</table>
+| Expected Output   | Actual Output   |
+| ----------------- | --------------- |
+| (2 + 3) \* 8 = 40 | 2 + 3 \* 8 = 26 |
 
 1. Adjust the 2 print statements to produce the expected output, adding
-   parenthesis to both the string and the mathematical expression to force `+`
-   to be performed before `*`.
-2. Run `MathematicalExpression` to view the output.
-3. Run `MathematicalExpressionTest` to confirm your solution passes the Junit
-   test.
+   parenthesis to both the string and the math expression to force `+` to be
+   performed before `*`.
+2. Run `MathExpression` to view the output.
 
-Save and close any open files.
+Let's also create a Junit class named `MathExpressionTest` to ensure
+`MathExpression` produces the correct output.
 
-## Task 7 - SelfIntroduction.java
+1. In the Explorer, right-click on the "java" folder in
+   `week1_lab/src/test/java` and then select `New Java File > Class` from the
+   popup menu. Enter the class name `MathExpressionTest`.
+   <img src="images/new_test_class.png" alt="create new test class" width="400">
+2. You should see `MathExpressionTest.java` in `test/java` subfolder along with
+   the other Junit test classes. You can drag the file to this folder if you
+   accidentally created it in another folder.
+   <img src="images/new_test_explorer_view.png" alt="create new test class" width="400">
 
-In this task, you will create a new Java class named `SelfIntroduction` and add
-print statements to the `main` method to introduce yourself.
-
-1. In the Explorer, right-click on the "java" folder (not the "main" folder ) in
-   `week1_lab>src>main/java` and then select `New Java File > Class` from the
-   popup menu. Make sure you right clicked on the "java" and not "main" folder.
-   <img src="images/new_class.png" alt="create new class" width="400">
-2. Enter the class name `SelfIntroduction`. Spelling and case matter.
-
-   <img src="images/new_class_name.png" alt="create new class" width="200">
-
-3. You should see `SelfIntroduction.java` in the Package Explorer. The code
-   editor view will contain the new Java class. NOTE: The Junit test
-   `SelfIntroductionTest` class already exists for testing your new
-   `SelfIntroduction` class.
-
-   <img src="images/new_class_explorer_view.png" alt="new class in editor view" width=200>
-
-4. Edit the code as shown below to add the sample block comment before the class
-   header (replace First and Last with your name). This is a JavaDoc comment,
-   which is used to generate documentation in HTML format from Java source code.
-   We'll learn more about JavaDoc in a later lesson. Add a `main` method with
-   print statements to introduce yourself. The program should produce at least 4
-   lines of output.
+3. Edit `MathExpressionTest` as shown below. The class has one test method named
+   `mainOutputTest`. The test executes the `main` method in `MathExpression` and
+   checks if the expected output and actual output match. Don't worry about
+   understanding all of the test code. We'll learn more about Junit tests in a
+   later lesson.
 
 ```java
-/**
- * SelfIntroduction class demonstrates at least 4 print statements.
- * @author First Last
- */
-public class SelfIntroduction {
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
-    public static void main(String[] args) {
-        System.out.println("My name is ...");
+class MathExpressionTest {
+
+    @Test
+    @DisplayName("MathExpression.main prints correct output")
+    void mainOutputTest() throws Exception {
+      // Define the expected output
+        String expectedOutput = "(2 + 3) * 8 = 40\n";
+
+        // Capture the actual output from MathExpression.main
+        String actualOutput = tapSystemOutNormalized(() -> {
+            MathExpression.main(new String[] {});
+        });
+
+        // Compare expected vs actual output
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }
 ```
 
-6. Run `SelfIntroduction` to view your output. Fix any syntax errors that may
-   arise.
-7. Run `SelfIntroductionTest` to confirm your solution passes the Junit test,
-   which is designed to count the number of lines of output.
-
-NOTE: The Junit test will fail if you did not name your class
-"SelfIntroduction". Spelling and case matter in Java. You can rename a class in
-the Explorer by right-clicking on it and select "Rename" from the popup menu.
+Run `MathExpressionTest` to confirm your solution passes the Junit test.
 
 Save and close any open files.
 
