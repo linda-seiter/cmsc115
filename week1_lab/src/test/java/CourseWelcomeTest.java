@@ -8,12 +8,16 @@ class CourseWelcomeTest {
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
     void mainOutputTest() throws Exception {
-        String expectedOutput = 
-    			"Welcome to CMCS 115.\n" +
+
+        String expectedOutput = "Welcome to CMCS 115.\n" +
                 "Let's learn Java!\n";
-        //Capture the output from CourseWelcome.main  
-        String actualOutput = tapSystemOutNormalized(() -> {CourseWelcome.main(new String[]{});});
-        //Compare expected vs actual output
+
+        // Capture the output from CourseWelcome.main
+        String actualOutput = tapSystemOutNormalized(() -> {
+            CourseWelcome.main(new String[] {});
+        });
+
+        // Compare expected vs actual output
         assertEquals(expectedOutput, actualOutput);
     }
 

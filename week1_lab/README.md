@@ -12,35 +12,31 @@
 
 ## Setup
 
-TODO: Instruction on starting VS Code, opening workspace, opening README.md.
+VS Code is a powerful interactive development environment (IDE) whose primary
+purpose is to serve as a code editor. The basic user interface includes a
+explorer on the left that lists files and folders, and an editor on the right
+that displays the content of opened files.
+
+![user interface explorer and editor views](images/vscode_ui.png)
+
+If the explorer view is not displayed, click the top button in the activity
+sidebar, or select View > Explorer from the top menu bar.
+
+<img alt="explorer top button in activity sidebar" src="images/explorer_button.png" width="200" >
+
+Expand the `week1_lab > src > main` folders to list the Java files in the
+default package:
+
+<img alt="expland week1_lab, src, main folders" src="images/week1_lab.png" width="200" >
 
 ## Task 1 - CourseWelcome.java
 
-The Package Explorer displays a lab project for each week.
+Click on `CourseWelcome.java` to open the file in the editor window.
 
-![Package Explorer](images/package_explorer.png)
-
-Expand the `week1_lab > src > default package` folders to view the files in the
-default package:
-
-![Expand week1_lab, src, default package](images/expand_project_folders.png)
-
-Double click on `CourseWelcome.java` to open the file in the editor window.
-
-![open file from Package Explorer](images/open_file.png)
+![open file from Explorer](images/open_file.png)
 
 A Java class with a `main` method represents an executable program. The `main`
 method is automatically called when you run the program.
-
-```java
-public class CourseWelcome {
-
-    public static void main(String[] args) {
-        System.out.println("Welcome to CMCS 115.");
-        System.out.println("Let's learn Java!");
-    }
-}
-```
 
 When the `main` method executes, the two print statements produce the following
 output:
@@ -50,37 +46,54 @@ output:
  Let's learn Java!
 ```
 
-Let's execute the program and view the output.
+Let's execute the program and view the output. There are several ways you can
+run the program.
 
-1. Click `CourseWelcome.java` in the Package Explorer to select the file.
-2. Click the green triangular run button on the workbench toolbar, or select
-   _Run > Run As > Java Application_ from the menubar.
-   ![click run button on workbench toolbar](images/run_java.png)
-3. The program output is displayed in the console window.
-   ![console output](images/console.png)
+| Run Java Program                                                                              | Option                                                               |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| <img alt="click run button above main signature" src="images/run_main.png" width="400" >      | Click `Run` above the main method signature                          |
+| <img alt="right-click class, Run Java" src="images/run_java.png" width="400" >                | Right-click in the Explorer on the Java file, then select `Run Java` |
+| <img alt="Run, Run without Debugging main menubar" src="images/run_menubar.png" width="400" > | Select `Run > Run Without Debugging` from the main menubar           |
+
+The program output is displayed in the terminal window.
+![terminal output](images/terminal_output.png)
+
+### Testing a Java Program
 
 Sometimes a program has an error and fails to produce the expected output. It is
 important to thoroughly test every Java class to find and fix bugs.
-[Junit](https://junit.org/junit5/) is a popular Java testing framework. For each
-regular Java class, we use a separate Junit class to test the functionality.
+[Junit](https://junit.org/junit5/) is a popular Java testing framework.
+
+Expand the `week1_lab > src > test` folder to list the Junit test files:
+
+<img alt="expland week1_lab, src, test folders" src="images/test_folder.png" width="200" >
+
+For each regular Java class, we use a separate Junit class to test the
+functionality.
 
 - Java class `CourseWelcome`
 - Junit test class `CourseWelcomeTest`
 
-Don't worry about understanding the code in `CourseWelcomeTest`. We'll learn how
-to write Junit tests in a later lesson.
+The `CourseWelcomeTest` Junit class has a test method that checks the output
+produced when the `main` method in `CourseWelcome` is executed. Don't worry
+about understanding the code in the Junit test class. We'll learn how to write
+Junit tests in a later lesson.
 
-Let's practice running a Junit test:
+Let's practice running a Junit test. There are several ways to run a Junit test
+class.
 
-1. Click on `CourseWelcomeTest.java`, then click the run button.
-   ![console output](images/run_test.png)
-2. The test runs the `main` method in `CourseWelcome`, then compares the actual
-   output to the expected output. The Junit window appears with a green bar to
-   indicate the test was successful. The Junit window also indicates 1 test ran
-   with 0 errors and 0 failures. ![console output](images/test1_passed.png)
-3. You can close the Junit view after verifying the test passed.
+<img alt="Run Junit test" src="images/run_test.png" >
 
-<img src="images/close_junit.png" alt="close junit view" width=200>
+- Right-click on `CourseWelcomeTest.java`, then select `Run Java`.
+- Click the green run button displayed in the Java code next to the class
+  header.
+- Select `Run > Run Without Debugging` from the main menubar.
+
+The test runs the `main` method in `CourseWelcome`, then compares the actual
+output to the expected output.
+
+Junit displays the test result. A green checkmark indicates the test was
+successful. ![junit successful test result](images/test_success.png)
 
 ### Java Perspective
 
