@@ -8,11 +8,16 @@ class JavaFactsTest {
     @Test
     @DisplayName("JavaFacts.main prints correct output")
     void mainOutputTest() throws Exception {
+
         String expectedOutput = "Java was initially named Oak.\n"
-        		+ "Java is an object-oriented language.\n";
-        //Capture the output from JavaFacts.main  
-        String actualOutput = tapSystemOutNormalized(() -> {JavaFacts.main(new String[]{});});
-        //Compare expected vs actual output
+                + "Java is an object-oriented language.\n";
+
+        // Capture the output from JavaFacts.main
+        String actualOutput = tapSystemOutNormalized(() -> {
+            JavaFacts.main(new String[] {});
+        });
+
+        // Compare expected vs actual output
         assertEquals(expectedOutput, actualOutput);
     }
 

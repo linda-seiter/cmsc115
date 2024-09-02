@@ -9,6 +9,7 @@
 - Comment out code to prevent execution
 - Apply rules of operator precedence
 - Fix common syntax errors
+- Create a new Java class
 
 ## Setup
 
@@ -38,6 +39,15 @@ Click on `CourseWelcome.java` to open the file in the editor window.
 A Java class with a `main` method represents an executable program. The `main`
 method is automatically called when you run the program.
 
+```java
+public class CourseWelcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to CMCS 115.");
+        System.out.println("Let's learn Java!");
+    }
+}
+```
+
 When the `main` method executes, the two print statements produce the following
 output:
 
@@ -49,7 +59,7 @@ output:
 Let's execute the program and view the output. There are several ways you can
 run the program.
 
-| Run Java Program                                                                              | Option                                                               |
+|                                                                                               | Ways to Run a Java Program                                           |
 | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | <img alt="click run button above main signature" src="images/run_main.png" width="400" >      | Click `Run` above the main method signature                          |
 | <img alt="right-click class, Run Java" src="images/run_java.png" width="400" >                | Right-click in the Explorer on the Java file, then select `Run Java` |
@@ -74,57 +84,35 @@ functionality.
 - Java class `CourseWelcome`
 - Junit test class `CourseWelcomeTest`
 
-The `CourseWelcomeTest` Junit class has a test method that checks the output
-produced when the `main` method in `CourseWelcome` is executed. Don't worry
-about understanding the code in the Junit test class. We'll learn how to write
-Junit tests in a later lesson.
+The `CourseWelcomeTest` Junit class has a method that checks the output produced
+when `CourseWelcome` is executed. Don't worry about understanding the code in
+the Junit test class. We'll learn how to write Junit tests in a later lesson.
 
-Let's practice running a Junit test. There are several ways to run a Junit test
-class.
+NOTE: The `\n` in the expected output is a newline character. When your code
+calls `System.out.println`, the newline character is automatically appended to
+the contents.
+
+Let's practice running a Junit test. There are several different ways to run a
+Junit test class.
+
+- In the Explorer, right-click on `CourseWelcomeTest.java`, then select
+  `Run Java`.
+- In the Editor, click the green arrow run button displayed next to the class
+  header.
+- In the main menubar, select `Run > Run Without Debugging`.
 
 <img alt="Run Junit test" src="images/run_test.png" >
 
-- Right-click on `CourseWelcomeTest.java`, then select `Run Java`.
-- Click the green run button displayed in the Java code next to the class
-  header.
-- Select `Run > Run Without Debugging` from the main menubar.
+Junit displays the test result in a new view at the bottom of the window. A
+green checkmark indicates the test was successful.
 
-The test runs the `main` method in `CourseWelcome`, then compares the actual
-output to the expected output.
+![junit successful test result](images/test_success.png)
 
-Junit displays the test result. A green checkmark indicates the test was
-successful. ![junit successful test result](images/test_success.png)
-
-### Java Perspective
-
-An Eclipse perspective contains an arrangement of views and an editor area. We
-will primarily work with two Eclipse perspectives:
-
-- **Java perspective**: For editing and running a Java class.
-- **Debug perspective**: For debugging a Java class.
-
-The **Java perspective** is the default perspective and displays the Package
-Explorer, Task List, Outline, and Problems view.
-
-If you accidentally close a view such as the Package Explorer, you can restore
-it from the main menu by selecting _Window > Perspective > Reset Perspective_:
-
-<img src="images/reset_perspective.png" alt="reset java perspective" width=300>
-
-Try closing the Package Explorer view, then get it back by restoring the Java
-perspective.
-
-NOTE: Occasionally you might find yourself in a different perspective such as
-Debug or Java Browsing (which is different than the Java perpective). You can
-restore the layout to the Java perspective by selecting _Window > Perspective >
-Open Perspective > Java_.
-
-<img src="images/open_java_perspective.png" alt="open java perspective" width=300>
+Close any open files.
 
 ## Task 2 - JavaFacts.java
 
-Double click on `JavaFacts.java` in the Package Explorer to open the file in the
-editor.
+Click on `JavaFacts.java` to open the file in the editor.
 
 ```java
 public class JavaFacts {
@@ -144,20 +132,13 @@ actual output produced by the current code differs from the expected output.
 | --------------------------------------------------------------------- | ---------------------------------------------------- |
 | Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-1. Click on `JavaFacts.java`, then click the run button to view the output.
-   Notice the actual output does not match the expected output.
-2. Click on the Junit class `JavaFactsTest.java`, then click the run button to
-   run the test. The red bar indicates a test failed. Junit also displays the
-   failure count to indicate the number of test methods that failed.
+1. Run the `JavaFacts` class. Notice the actual output does not match the
+   expected output.
+2. Run the Junit `JavaFactsTest` class. The test fails as indicates by the red X
+   next to the test method name. The difference between the expected and actual
+   output is displayed and highlighted.
 
-![task 2 test fails](images/test2_failed.png)
-
-Junit provides a popup window to compare the actual and expected test results:
-
-1. Expand and click on the failed test.
-2. Click the "Compare Actual With Expected Test Result" icon.
-3. The difference is displayed in the popup window.
-   ![task 2 compare results](images/test2_result_comparison.png)
+<img alt="test fails" src="images/test_fail.png" >
 
 Let's fix `JavaFacts` to produce the expected output.
 
@@ -165,12 +146,18 @@ Let's fix `JavaFacts` to produce the expected output.
    "Java is an object-oriented language". Save your changes by selecting
    `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or
    `Command-S` (Mac).
-2. Run `JavaFacts` and view the output in the console.
-3. Run `JavaFactsTest` and confirm your solution passes the test.
+2. Run `JavaFacts` and view the output in the terminal window.
+3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
+   should see a green checkmark next to the test method.
 
-Close any open files by clicking the `X` on the editor window tab.
+NOTE: VS Code displays a history of all test runs. The most recent successful
+test run is displayed on top, but you'll also see the old failed test run below
+it. You can clear the test history so you don't see older test runs by clicking
+the `Clear All Results` button.
 
-![close file in editor window](images/close.png)
+<img alt="clear test history" src="images/test_history.png"  width="200">
+
+Close any open files.
 
 ## Task 3 - Comments.java
 
@@ -180,8 +167,8 @@ one or more lines of code from executing.
 - Line comment: Text following `//` is ignored.
 - Block or multi-line comment: Text between `/*` and `*/` is ignored.
 
-Double click on `Comments.java` in the Package Explorer to open the file in the
-editor, then run the program to view the output.
+Click on `Comments.java` to open the file in the editor, then run the program to
+view the output.
 
 ```java
 public class Comments {
@@ -226,7 +213,8 @@ public class Comments {
 Notice the expected output does not include "peach". Let's fix the program to
 produce the expected output:
 
-1. Add `//` to comment out the last print statement (don't delete it!).
+1. Add `//` to comment out the last print statement (don't delete it!). Save the
+   file.
 2. Run `Comments` to view the output.
 3. Run `CommentsTest` to confirm your solution passes the Junit test.
 
@@ -234,18 +222,15 @@ Save and close any open files.
 
 ## Task 4 - Fixit.java
 
-Double click on `Fixit.java` in the Package Explorer to open the file in the
-editor.
+Click on `Fixit.java` to open the file in the editor.
 
 ```java
 public class Fixit {
-
    public static void main(String[] args) {
       System.out.println("ship");
       //System.out.println("airplane")
       System.out.println("tank");
    }
-
 }
 ```
 
@@ -264,29 +249,27 @@ Run the program to view the output. The second print statement is commented out
 so the program does not produce the expected output.
 
 1. Remove the comment characters `//` from the second print statement.
-2. Try to run the program. A warning message appears indicating an error in the
-   code. Click "Proceed" to try to execute it anyway.<br>
-   ![run warning](images/run_warning.png)
-3. The program fails to run. The error message indicates line 5 is missing a
-   semicolon. <br>
-   ![compilation error message in console](images/console_error_message.png)
-4. Notice the editor window also displays red warning symbols on line 5. Hover
-   the mouse over either warning symbol to view the error message. <br>
+2. Notice the editor window displays red warning symbol at the end of the line.
+   Hover the mouse over the warning symbol to view the error message. The popup
+   window shows a syntax error due to a missing semicolon.<br>
    ![compiler displays warning symbol near syntax error](images/compiler_warning.png)
+3. Try to run the program **without** fixing the error. A warning message
+   appears indicating the build failed. Click "Continue" to execute the code
+   anyway. The program fails and an error message about the missing semicolon is
+   displayed in the terminal window.
 
 Every statement in the `main` method must end with a semicolon. Let's fix the
 syntax error so the program can execute.
 
-1. Add a semicolon to the end of line 5.
+1. Add a semicolon to fix the syntax error. Save the file.
 2. Run `Fixit` to view the output.
 3. Run `FixitTest` to confirm your solution passes the Junit test.
 
-Save and close any open files.
+Close any open files.
 
 ## Task 5 - Printing.java
 
-Double click on `Printing.java` in the Package Explorer to open the file in the
-editor.
+Click on `Printing.java` to open the file in the editor.
 
 ```java
 public class Printing {
@@ -331,8 +314,7 @@ Save and close any open files.
 
 ## Task 6 - MathematicalExpression.java
 
-Double click on `MathematicalExpression.java` in the Package Explorer to open
-the file in the editor.
+Click on `MathematicalExpression.java` to open the file in the editor.
 
 ```java
 public class MathematicalExpression {
@@ -393,33 +375,27 @@ Save and close any open files.
 In this task, you will create a new Java class named `SelfIntroduction` and add
 print statements to the `main` method to introduce yourself.
 
-NOTE: The Junit test class `SelfIntroductionTest` already exists for testing
-your new class `SelfIntroduction`.
+1. In the Explorer, right-click on the "java" folder (not the "main" folder ) in
+   `week1_lab>src>main/java` and then select `New Java File > Class` from the
+   popup menu. Make sure you right clicked on the "java" and not "main" folder.
+   <img src="images/new_class.png" alt="create new class" width="400">
+2. Enter the class name `SelfIntroduction`. Spelling and case matter.
 
-In the Project Explorer, right-click on `week1_lab>src>(default package)` and
-then select `New > Class` from the popup menu.
+   <img src="images/new_class_name.png" alt="create new class" width="200">
 
-<img src="images/new_class.png" alt="create new class" width=400>
+3. You should see `SelfIntroduction.java` in the Package Explorer. The code
+   editor view will contain the new Java class. NOTE: The Junit test
+   `SelfIntroductionTest` class already exists for testing your new
+   `SelfIntroduction` class.
 
-Confirm the source folder and package are as shown in the form below (press
-Cancel if there is an error). Enter the class name `SelfIntroduction` and check
-the box to generate a `main` method. Press "Finish" to create the class.
+   <img src="images/new_class_explorer_view.png" alt="new class in editor view" width=200>
 
-<img src="images/new_class_form.png" alt="new class form" width=400>
-
-You should see `SelfIntroduction.java` in the Package Explorer. The code editor
-view will contain the new Java class with a `main` method.
-
-<img src="images/new_class_editor.png" alt="new class in editor view" width=400>
-
-1. Edit the code as shown below to add the sample block comment before the class
+4. Edit the code as shown below to add the sample block comment before the class
    header (replace First and Last with your name). This is a JavaDoc comment,
    which is used to generate documentation in HTML format from Java source code.
-   We'll learn more about JavaDoc in a later lesson.
-2. Edit the `main` method to add print statements to introduce yourself. The
-   program should produce at least 4 lines of output.
-3. Run `SelfIntroductionTest` to confirm your solution passes the Junit test.
-   The test is designed to count the number of lines of output.
+   We'll learn more about JavaDoc in a later lesson. Add a `main` method with
+   print statements to introduce yourself. The program should produce at least 4
+   lines of output.
 
 ```java
 /**
@@ -435,16 +411,14 @@ public class SelfIntroduction {
 }
 ```
 
+6. Run `SelfIntroduction` to view your output. Fix any syntax errors that may
+   arise.
+7. Run `SelfIntroductionTest` to confirm your solution passes the Junit test,
+   which is designed to count the number of lines of output.
+
 NOTE: The Junit test will fail if you did not name your class
-"SelfIntroduction". Spelling and case matter in Java. You can't just change the
-class name in the code editor, you also need to change the file name to match
-exactly in the Project Explorer.
-
-If you need to rename a class:
-
-1. Right-click on the class file in the Package Explorer.
-2. Select _Refactor > Rename_.
-3. Type in the new class name and press Finish.
+"SelfIntroduction". Spelling and case matter in Java. You can rename a class in
+the Explorer by right-clicking on it and select "Rename" from the popup menu.
 
 Save and close any open files.
 
@@ -453,7 +427,5 @@ Save and close any open files.
 If there are any open files in the editor window, right-click on one of the tabs
 and select "Close All". You will be prompted if there are unsaved changes.
 **Save your changes before submitting.**
-
-![close all and save](images/close_all.png)
 
 TODO: Instructions on submitting
