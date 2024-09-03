@@ -2,8 +2,6 @@
 
 ## Setup
 
-TODO: ...
-
 Expand the `week1_project/src/main` folders and `week1_project/src/test` folders
 to list the Java classes and corresponding Junit test classes.
 
