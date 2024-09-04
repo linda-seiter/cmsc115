@@ -2,20 +2,20 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
-public class GasFillupTest {
+public class GasPurchaseTest {
 
     @Test
-    @DisplayName("GasFillup.main prints correct output for input: 12.5 3.50")
+    @DisplayName("GasPurchase.main prints correct output for input: 12.5 3.50")
     public void gallons_12pt5_price_3pt5() throws Exception {
 
         String input = "12.5 3.50";
         String expectedOutput = "Enter gallons and price per gallon: " +
                 "You owe $43.75\n";
 
-        // Capture the output from GasFillup.main using the provided input.
+        // Capture the output from GasPurchase.main using the provided input.
         withTextFromSystemIn(input).execute(() -> {
             String actualOutput = tapSystemOutNormalized(() -> {
-                GasFillup.main(new String[] {});
+                GasPurchase.main(new String[] {});
             });
 
             // Compare expected vs actual output
@@ -34,7 +34,7 @@ public class GasFillupTest {
         // Capture the output from GasFillup.main using the provided input.
         withTextFromSystemIn(input).execute(() -> {
             String actualOutput = tapSystemOutNormalized(() -> {
-                GasFillup.main(new String[] {});
+                GasPurchase.main(new String[] {});
             });
 
             // Compare expected vs actual output

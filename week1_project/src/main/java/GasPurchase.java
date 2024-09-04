@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 /**
- * GasFillup class - demonstrate initializing variables from console input
+ * GasPurchase class - demonstrate initializing variables from console input
  *
  * @author First Last
  */
-public class GasFillup {
+public class GasPurchase {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // TODO
+        // TODO:
 
     }
 }

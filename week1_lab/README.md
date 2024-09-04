@@ -574,14 +574,9 @@ and select "Close All". You will be prompted if there are unsaved changes.
 
 TODO: Instructions on submitting
 
-<div class="hideme">
-   <style>
+<style>
       th,td {
          border: 1px solid black;
          padding: 5px;
       }
-      .hideme {
-         display:none;
-      }
-   </style>
-</div>
+</style>

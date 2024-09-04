@@ -2,10 +2,9 @@
 
 ## Setup
 
-Expand the `week1_project/src/main` folders and `week1_project/src/test` folders
-to list the Java classes and corresponding Junit test classes.
+Expand the `week1_project/src/main` folder to list the Java classes.
 
-<img alt="expland week1_project, src, main folders" src="images/week1_project_files.png" width="200" >
+<img alt="expand week1_project, src, main folders" src="images/week1_project_files.png" width="200" >
 
 ## Task 1 - SelfIntroduction.java
 
@@ -19,7 +18,7 @@ Click on `SelfIntroduction.java` to open the file in the editor.
  */
 public class SelfIntroduction {
     public static void main(String[] args) {
-        // TODO: Add print statements
+        // TODO: Add print statements to introduce yourself
 
     }
 }
@@ -36,7 +35,16 @@ header.
 3. Run `SelfIntroduction` to confirm your program prints at least 4 lines of
    output.
 
-Save your file.
+For example:
+
+```text
+My name is Spongebob.
+I am majoring in Comedic Arts.
+I live in a pineapple at the bottom of the sea.
+I love to laugh!
+```
+
+Save and close the file.
 
 ## Task 2 - BillSplitter.java
 
@@ -70,8 +78,10 @@ errors that prevent the program from producing the expected output.
 | ----------------------- | ------------------------------------------ |
 | Each person owes: 56.52 | Each person owes: 94.20 + 94.20 \* 0.2 / 2 |
 
-1. Edit the second print statement to fix the errors.
-2. Run `BillSplitter` to confirm the expected output.
+1. Update the Javadoc comment.
+2. Edit the second print statement to fix the errors. The math expression should
+   be corrected and its value printed.
+3. Run `BillSplitter` to confirm the expected output.
 
 HINT: Recall operator precedence and the default order of operations:
 
@@ -79,25 +89,25 @@ HINT: Recall operator precedence and the default order of operations:
 2. Multiplication and Division
 3. Addition and Subtraction
 
-Save your file.
+Save and close the file.
 
 ## Task 3
 
-Click on `GasFillup.java` to open the file in the editor.
+Click on `GasPurchase.java` to open the file in the editor.
 
 ```java
 import java.util.Scanner;
 
 /**
- * GasFillup class - demonstrate initializing variables from console input
+ * GasPurchase class - demonstrate initializing variables from console input
  *
  * @author First Last
  */
-public class GasFillup {
+public class GasPurchase {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // TODO
+        // TODO:
 
     }
 }
@@ -111,7 +121,7 @@ then calculate and print the cost as shown in the sample runs below.
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Enter gallons and price per gallon: <b>12.5 3.50</b><br> You owe $43.75 | Enter gallons and price per gallon: <b>8.0 3.75</b><br>You owe $30.0 |
 
-Save your file.
+Save and close your file.
 
 ## Submit Your Solution
 
