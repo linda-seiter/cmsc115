@@ -24,10 +24,10 @@ sidebar, or select View > Explorer from the top menu bar.
 
 <img alt="explorer top button in activity sidebar" src="images/explorer_button.png" width="200" >
 
-Expand the `week1_lab > src > main` folders to list the Java files in the
-default package:
+Expand the `week1_lab/src/main` folders to list the Java files in the default
+package:
 
-<img alt="expand week1_lab, src, main folders" src="images/week1_lab.png" width="200" >
+<img alt="expand week1_lab/src/main folders" src="images/week1_lab.png" width="200" >
 
 ## Task 1 - CourseWelcome.java
 
@@ -56,20 +56,22 @@ There are several ways to run the `main` method.
 | <img alt="Run, Run without Debugging main menubar" src="images/run_menubar.png" width="400" > | Select `Run > Run Without Debugging` from the main menubar. |
 
 VS Code displays the console output in a terminal window, which is usually
-located at the bottom of the user interface.
+located at the bottom of the user interface. Click on the "TERMINAL" tab if you
+don't see the output.
+
 ![terminal output](images/terminal_output.png)
 
-Many of the labs you'll do involve writing a program to produce some expected
-output. The current code produces the text shown in the "Actual Output" column
-below. However, assume the code should produce the text in the "Expected Output"
+Many of the labs involve writing a program to produce some expected output. The
+current code produces the text shown in the **Actual Output** column below.
+However, assume the code should produce the text in the **Expected Output**
 column.
 
 | Expected Output                                                      | Actual Output                             |
 | -------------------------------------------------------------------- | ----------------------------------------- |
 | Welcome to CMCS 115 - Introductory Programming.<br>Let's learn Java! | Welcome to CMCS 115.<br>Let's learn Java! |
 
-When the actual output does not match the expected output, we need to fix the
-code:
+We need to fix the code when the actual output does not match the expected
+output.
 
 1. Edit the first statement in the `main` method to print the character string
    "Welcome to CMCS 115 - Introductory Programming.".
@@ -82,7 +84,7 @@ code:
 Java comments can be used to help explain the code. A comment can also prevent
 one or more lines of code from executing.
 
-- Line comment: Text following `//` is ignored.
+- Line comment: Text following `//` is ignored on the current line.
 - Block or multi-line comment: Text between `/*` and `*/` is ignored.
 
 Click on `Comments.java` to open the file in the editor, then run the program to
@@ -143,7 +145,7 @@ the beginning `/**` and ends with `/`. For example:
 
 ```java
 /**
- * Comments class demonstrates different types of Java comments.
+ * Comments class - demonstrates different types of Java comments.
  *
  * @Author first last
  */
@@ -309,8 +311,9 @@ Week#2 hours: 39 rate: $18.25 pay: $711.75
 - A **variable** is a name associated with a memory location.
 - A **variable declaration** allocates memory to store a value.
 
-Each variable declaration must specify a data type such as `int` or `double`,
-along with the variable name. Once a variable is declared, it can be assigned an
+Java requires a variable to be declared **before** it can be assigned a value. A
+variable declaration must specify a data type such as `int` or `double`, along
+with the variable name. Once a variable is declared, it can be assigned an
 initial value. The declaration and initialization can be done in one statement
 or two as shown below.
 
@@ -322,7 +325,6 @@ A variable is declared only once within a block such as a method body. However,
 it can be assigned a value several times.
 
 Let's use the debugger to step through the program one line of code at a time.
-
 Debugging shows how variables are declared, initialized, and updated in memory.
 
 <table>
