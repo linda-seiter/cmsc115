@@ -13,30 +13,62 @@
 TODO: Instructions on how to configure debugger to prevent stepping into java.\*
 methods, etc.
 
-- settings/Java/Debug/Step Filtering
-- Select all, Apply and close, restart eclipse.
+### Task 1 - Hello.java
 
-### Task 1 - ???
+Expand the `week2/src/main/java` folder to view the Java files for the week2
+lab.
 
-TODO: Update this with another example to introduce Junit.
+Click on `Hello.java` to open the file in the editor.
+
+```java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+```
 
 Sometimes a program has an error and fails to produce the expected output. It is
 important to thoroughly test every Java class to find and fix bugs.
-[Junit](https://junit.org/junit5/) is a popular Java testing framework.
 
-Expand the `week1_lab > src > test` folder to list the Junit test files:
+[Junit](https://junit.org/junit5/) is a popular Java testing framework. For each
+regular Java class, we use a separate Junit class to test the functionality.
 
-<img alt="expland week1_lab, src, test folders" src="images/test_folder.png" width="200" >
+- Java class `Hello`
+- Junit test class `HelloTest`
 
-For each regular Java class, we use a separate Junit class to test the
-functionality.
+Expand the `week2_lab/src/test/java` folders to list the Junit test files:
 
-- Java class `CourseWelcome`
-- Junit test class `CourseWelcomeTest`
+<img alt="expand week2_lab, src, test folders" src="images/week2_lab_files.png" width="150" >
 
-The `CourseWelcomeTest` Junit class has a method that checks the output produced
-when `CourseWelcome` is executed. Don't worry about understanding the code in
-the Junit test class. We'll learn how to write Junit tests in a later lesson.
+The `HelloTest` Junit class has a method that checks the output produced when
+the `Hello` class is executed. Don't worry about understanding the code in the
+Junit test class. We'll learn how to write Junit tests in a later lesson.
+
+```java
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
+
+class HelloTest {
+
+    @Test
+    @DisplayName("Hello.main prints correct output")
+    void helloOutput() throws Exception {
+
+        String expectedOutput = "Hello World!\n";
+
+        // Capture the output from Hello.main
+        String actualOutput = tapSystemOutNormalized(() -> {
+            Hello.main(new String[] {});
+        });
+
+        // Compare expected vs actual output
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+}
+```
 
 NOTE: The `\n` in the expected output is a newline character. When your code
 calls `System.out.println`, the newline character is automatically appended to
@@ -45,18 +77,20 @@ the contents.
 Let's practice running a Junit test. There are several different ways to run a
 Junit test class.
 
-- In the Explorer, right-click on `CourseWelcomeTest.java`, then select
-  `Run Java`.
+- In the Explorer, right-click on `HelloTest.java`, then select `Run Java`.
 - In the Editor, click the green arrow run button displayed next to the class
   header.
 - In the main menubar, select `Run > Run Without Debugging`.
 
-<img alt="Run Junit test" src="images/run_test.png" >
+![run junit test](images/run_test.png)
 
 Junit displays the test result in a new view at the bottom of the window. A
-green checkmark indicates the test was successful.
+green checkmark indicates the test was successful. If you don't see the test run
+view, click the "TEST RESULTS" tab.
 
 ![junit successful test result](images/test_success.png)
+
+Congratulations, you just ran your first successful Junit test!
 
 Close any open files.
 
@@ -84,11 +118,12 @@ actual output produced by the current code differs from the expected output.
 
 1. Run the `JavaFacts` class. Notice the actual output does not match the
    expected output.
-2. Run the Junit `JavaFactsTest` class. The test fails as indicates by the red X
-   next to the test method name. The difference between the expected and actual
-   output is displayed and highlighted.
+2. Run the `JavaFactsTest` Junit class. The test fails as indicates by the red X
+   next to the test method name, along with the error messages displayed in the
+   "TEST RESULTS" window. A table showing the difference between the expected
+   and actual output is displayed in a popup window.
 
-<img alt="test fails" src="images/test_fail.png" >
+![test fails](images/test_fail.png)
 
 Let's fix `JavaFacts` to produce the expected output.
 
@@ -100,16 +135,18 @@ Let's fix `JavaFacts` to produce the expected output.
 3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
    should see a green checkmark next to the test method.
 
+   <img alt="clear test history" src="images/fixed_test_success.png" >
+
 NOTE: VS Code displays a history of all test runs. The most recent successful
 test run is displayed on top, but you'll also see the old failed test run below
 it. You can clear the test history so you don't see older test runs by clicking
 the `Clear All Results` button.
 
-<img alt="clear test history" src="images/test_history.png"  width="200">
+<img alt="clear test history" src="images/clear_test_runs.png"  width="200">
 
 Close any open files.
 
-## Task 2 - PizzaShares.java
+## Task 3 - PizzaShares.java
 
 Click on `PizzaShares.java` to open the file in the editor.
 
@@ -199,7 +236,7 @@ There are 0 slices remaining.</td>
 
 <img src="images/multiple_test_results.png" alt="test results list multiple test methods" width="300">
 
-## Task 3 - StudentInfo.java
+## Task 4 - StudentInfo.java
 
 Double click on `StudentInfo.java` in the Package Explorer to open the file in
 the editor, then run the program to view the output.
@@ -301,7 +338,7 @@ the variable.
 
 Save and close any open files.
 
-## Task 4 - BusRoute.java
+## Task 5 - BusRoute.java
 
 Java has increment and decrement operators:
 
@@ -373,7 +410,7 @@ operators `+=` and `-=` to update `busStop` and `passengers`.
    from checking the output, there are tests that check for the presence of the
    division assignment and multiplication assignment operators.
 
-## Task 5 - DebugIt.java
+## Task 6 - DebugIt.java
 
 Click on `DebugIt.java` to open the file in the editor, then run the program to
 view the output.
@@ -572,7 +609,7 @@ equal sign, not after it!
 
 Try to remember this error, it is a very common mistake!
 
-## Task 6 - Rounding.java
+## Task 7 - Rounding.java
 
 Click on `Rounding.java` to open the file in the editor.
 
@@ -838,6 +875,10 @@ Cast as int		3298<br>
 Move . 3 digits left:	3.298<br>
 </tr>
 </table>
+
+## Task 8
+
+TODO: Create new Java class. Create new Junit class.
 
 ## Submit Your Solution
 

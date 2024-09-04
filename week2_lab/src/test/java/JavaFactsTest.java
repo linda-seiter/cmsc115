@@ -6,7 +6,7 @@ class JavaFactsTest {
 
     @Test
     @DisplayName("JavaFacts.main prints correct output")
-    void mainOutputTest() throws Exception {
+    void javaFactsOutput() throws Exception {
 
         String expectedOutput = "Java was initially named Oak.\n"
                 + "Java is an object-oriented language.\n";
