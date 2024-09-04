@@ -78,7 +78,8 @@ errors that prevent the program from producing the expected output.
 | ----------------------- | ------------------------------------------ |
 | Each person owes: 56.52 | Each person owes: 94.20 + 94.20 \* 0.2 / 2 |
 
-1. Update the Javadoc comment.
+1. Edit the JavaDoc comment to update the author tag with your first and last
+   name.
 2. Edit the second print statement to fix the errors. The math expression should
    be corrected and its value printed.
 3. Run `BillSplitter` to confirm the expected output.
@@ -113,9 +114,11 @@ public class GasPurchase {
 }
 ```
 
-Edit the `main` method to prompt the user to enter the number of gallons and the
-price per gallon of gas. Declare appropriate variables to store the user input,
-then calculate and print the cost as shown in the sample runs below.
+1. Edit the JavaDoc comment to update the author tag with your first and last
+   name.
+2. Edit the `main` method to prompt the user to enter the number of gallons and
+   the price per gallon of gas. Declare appropriate variables to store the user
+   input, then calculate and print the cost as shown in the sample runs below.
 
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
@@ -132,14 +135,9 @@ and select "Close All". You will be prompted if there are unsaved changes.
 
 TODO: Instructions on submitting
 
-<div class="hideme">
-   <style>
-      th,td {
-         border: 1px solid black;
-         padding: 5px;
-      }
-      .hideme {
-         display:none;
-      }
-   </style>
-</div>
+<style>
+   th,td {
+      border: 1px solid black;
+      padding: 5px;
+   }
+</style>
