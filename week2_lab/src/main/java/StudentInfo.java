@@ -1,5 +1,5 @@
 /**
- * StudentIfno class demonstrates an error in redeclaring a variable.
+ * StudentInfo class demonstrates an error in redeclaring a variable.
  * 
  * @author First Last
  */

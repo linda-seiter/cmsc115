@@ -6,7 +6,7 @@ class FixitTest {
 
     @Test
     @DisplayName("Fixit.main prints correct output")
-    void mainOutputTest() throws Exception {
+    void fixitOutput() throws Exception {
         String expectedOutput = "ship\n"
                 + "airplane\n"
                 + "tank\n";

@@ -1,5 +1,5 @@
 /**
- * BillSplitter class demonstrates printing a math expression and order of
+ * BillSplitter - demonstrates printing a math expression and order of
  * operations.
  * 
  * @author First Last

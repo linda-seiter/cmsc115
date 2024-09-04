@@ -6,7 +6,7 @@ class PrintingTest {
 
     @Test
     @DisplayName("Printing.main prints correct output")
-    void mainOutputTest() throws Exception {
+    void printingOutput() throws Exception {
         String expectedOutput = "red \n"
                 + "green blue \n"
                 + "pink \n"

@@ -6,7 +6,7 @@ class BillSplitterTest {
 
     @Test
     @DisplayName("BillSplitter.main prints correct output")
-    void mainOutputTest() throws Exception {
+    void billSplitterOutput() throws Exception {
 
         String expectedOutput = "Each person owes: 56.52\n";
 

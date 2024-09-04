@@ -2,15 +2,11 @@
 
 ## Learning Objectives
 
-- Declare, initialize, and update variables.
-- Use the debugger to control the current line of execution and visualize
-  variables in memory.
-- Use a `Scanner` to read user input.
-- Use numeric operators in calculations.
+- Use Junit to test a class
 - Use augmented assignment operators.
 - Perform numeric conversion.
 - Fix a program that contains syntax errors.
-- Debug and fix a program that contains logic errors.
+- Use the debugger to identify and fix logic errors.
 
 ## Setup
 
@@ -20,246 +16,98 @@ methods, etc.
 - settings/Java/Debug/Step Filtering
 - Select all, Apply and close, restart eclipse.
 
-## Task 1 - Paycheck.java
+### Task 1 - ???
 
-Click on `Paycheck.java` to open the file in the editor.
+TODO: Update this with another example to introduce Junit.
+
+Sometimes a program has an error and fails to produce the expected output. It is
+important to thoroughly test every Java class to find and fix bugs.
+[Junit](https://junit.org/junit5/) is a popular Java testing framework.
+
+Expand the `week1_lab > src > test` folder to list the Junit test files:
+
+<img alt="expland week1_lab, src, test folders" src="images/test_folder.png" width="200" >
+
+For each regular Java class, we use a separate Junit class to test the
+functionality.
+
+- Java class `CourseWelcome`
+- Junit test class `CourseWelcomeTest`
+
+The `CourseWelcomeTest` Junit class has a method that checks the output produced
+when `CourseWelcome` is executed. Don't worry about understanding the code in
+the Junit test class. We'll learn how to write Junit tests in a later lesson.
+
+NOTE: The `\n` in the expected output is a newline character. When your code
+calls `System.out.println`, the newline character is automatically appended to
+the contents.
+
+Let's practice running a Junit test. There are several different ways to run a
+Junit test class.
+
+- In the Explorer, right-click on `CourseWelcomeTest.java`, then select
+  `Run Java`.
+- In the Editor, click the green arrow run button displayed next to the class
+  header.
+- In the main menubar, select `Run > Run Without Debugging`.
+
+<img alt="Run Junit test" src="images/run_test.png" >
+
+Junit displays the test result in a new view at the bottom of the window. A
+green checkmark indicates the test was successful.
+
+![junit successful test result](images/test_success.png)
+
+Close any open files.
+
+## Task 2 - JavaFacts.java
+
+Click on `JavaFacts.java` to open the file in the editor.
 
 ```java
-/**
- * Paycheck class - debugging sample to demonstrate variables in memory
- * @author First Last
- */
-public class Paycheck {
+public class JavaFacts {
 
 	public static void main(String[] args) {
-		//Declare and initialize variables
-		double hourlyRate = 18.25;
-		int hoursWorked = 35;
-		double pay = hoursWorked * hourlyRate;
-
-		//Print initial values
-		System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
-
-		//Assign hoursWorked to 39, recalculate pay
-		hoursWorked = 39;
-		pay = hoursWorked * hourlyRate;
-
-		//Print updated values
-		System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
-
-		//TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50, recalculate pay
-
-		//TODO: Print updated values
-
+		System.out.println("Java was initially named Oak.");
+		System.out.println("Java is a language.");
 	}
 
 }
 ```
 
-Execute the program and view the output.
+`JavaFacts` should produce the expected output displayed below. However, the
+actual output produced by the current code differs from the expected output.
 
-```text
-Week#1 hours: 35 rate: $18.25 pay: $638.75
-Week#2 hours: 39 rate: $18.25 pay: $711.75
-```
+| Expected Output                                                       | Actual Output                                        |
+| --------------------------------------------------------------------- | ---------------------------------------------------- |
+| Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-- A **variable** is a name associated with a memory location.
-- A **variable declaration** allocates memory to store a value.
+1. Run the `JavaFacts` class. Notice the actual output does not match the
+   expected output.
+2. Run the Junit `JavaFactsTest` class. The test fails as indicates by the red X
+   next to the test method name. The difference between the expected and actual
+   output is displayed and highlighted.
 
-Each variable declaration must specify a data type such as `int` or `double`,
-along with the variable name. Once a variable is declared, it can be assigned an
-initial value. The declaration and initialization can be done in one statement
-or two as shown below.
+<img alt="test fails" src="images/test_fail.png" >
 
-| One Statement                                | Two Statements                                                            |
-| -------------------------------------------- | ------------------------------------------------------------------------- |
-| int hoursWorked = 35; //declare & initialize | int hoursWorked; &nbsp; &nbsp;//declare<br>hoursWorked = 35; //initialize |
+Let's fix `JavaFacts` to produce the expected output.
 
-A variable is declared only once within a block such as a method body. However,
-it can be assigned a value several times.
+1. Edit the second statement in the `main` method to print the character string
+   "Java is an object-oriented language". Save your changes by selecting
+   `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or
+   `Command-S` (Mac).
+2. Run `JavaFacts` and view the output in the terminal window.
+3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
+   should see a green checkmark next to the test method.
 
-Let's use the Eclipse debugger to step through the program one line of code at a
-time. Debugging helps to visualize how variables are declared, initialized, and
-updated in memory.
+NOTE: VS Code displays a history of all test runs. The most recent successful
+test run is displayed on top, but you'll also see the old failed test run below
+it. You can clear the test history so you don't see older test runs by clicking
+the `Clear All Results` button.
 
-<table>
+<img alt="clear test history" src="images/test_history.png"  width="200">
 
-<tr>
-<td>
-<img src = "images/set_breakpoint.png" alt="click in line 9 gutter to set breakpoint" width=300>
-</td>
-<td>
-Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.  A breakpoint is indicated by a small circle.  You can remove a breakpoint by clicking on it again.
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/debug_button.png" alt="debug button on menubar" width=200>
-</td>
-<td>
-There are several ways to start the debugger:<br>
-- Click the "Debug" button above the class header. <br>
-- Right-click Paycheck.java, then select "Debug Java".<br>
-- Select "Run > Start Debugging" from the main menubar.
-</td>
-</tr>
-</table>
-
-The main method is called and stops execution at the breakpoint, i.e. line 9.
-
-<img src = "images/debug_perspective.png" alt="debug perspective" width=600>
-
-- Line 9 is highlighted and there is a red arrow in the gutter, indicating the
-  current line of execution.
-- The **variables view** will display the variables stored in memory for the
-  current method.
-- The menubar displays new buttons to control the debugging session.
-
-<img src = "images/debug_controls.png" alt="debug perspective" width=300>
-
-Let's use the "Step Over" button to execute one line of code at a time and
-observe how each statement impacts the variables stored in memory. The "Step
-Over" button is second in the menubar. You can also press F10 to execute the
-current line of code.
-
-<table>
-
-<tr>
-<th>
-Step Over or F5
-</th>
-<th>
-Line Of Execution
-</th>
-<th>
-Variables View
-</th>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over or f5" width=50>
-</td>
-<td>
-<code>double hourlyRate = 18.25;</code>
-</td>
-<td>
-<code>hourlyRate</code> allocated and initialized
-<img src = "images/stepover_line9.png" alt="line 9 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over" width=50></td>
-<td>
-<code>int hoursWorked = 35;</code></td>
-<td>
-<code>hoursWorked</code> allocated and initialized 
-<img src = "images/stepover_line10.png" alt="line 10 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over and other debug icons" width=50></td>
-<td>
-<code>double pay = hoursWorked * hourlyRate;</code></td>
-<td>
-<code>pay</code> allocated and initialized<br>
-<img src = "images/stepover_line11.png" alt="line 11 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over" width=50></td>
-<td>
-<code>System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
-<td>
-Variables accessed from memory and printed to terminal
-<img src = "images/stepover_line14.png" alt="line 14 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over" width=50></td>
-<td>
-<code>hoursWorked = 39;</code></td>
-<td>
-<code>hoursWorked</code> updated in memory
-<img src = "images/stepover_line17.png" alt="line 17 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over" width=50></td>
-<td>
-<code>pay = hoursWorked * hourlyRate;</code></td>
-<td>
-<code>pay</code> updated in memory
-<img src = "images/stepover_line18.png" alt="line 18 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/step_over.png" alt="step over" width=50></td>
-<td>
-<code>
-System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
-<td>
-Variables accessed from memory and printed to terminal
-<img src = "images/stepover_line21.png" alt="line 21 variable state" width=200>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/terminate.png" alt="step over" width=50>
-</td>
-<td colspan="2">
-We've reached the end of the main method.  Press the red square to stop the debug session, or press Shift-F5.
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/explorer.png" alt="step over" width=50>
-</td>
-<td colspan="2">
-If you don't see the Explorer view with your lab files, click the Explorer icon in the activity bar.
-</td>
-</tr>
-
-</table>
-
-Now that you've seen how variables are initialized and updated in memory, add
-statements to update `hoursWorked` and `hourlyRate` and recalculate `pay` for
-week#3, then print the updated variable values. The expected output is displayed
-below:
-
-```text
-Week#1 hours: 35 rate: $18.25 pay: $638.75
-Week#2 hours: 39 rate: $18.25 pay: $711.75
-Week#3 hours: 27 rate: $18.75 pay: $506.25
-```
-
-1. Run `Paycheck` and view the output. Use the debugger to find and fix any
-   errors.
-2. Run `PaycheckTest` and confirm your solution passes the Junit test. You may
-   need to click on the "TEST RESULTS" tab to view the test run.
-
-<img src = "images/test_results.png" alt="click on test result tab" width=400>
-
-Save and close any open files.
-
-NOTE: Aside from visualizing variables in memory, you can use the debugger to
-step through your code to find logic errors. Debugging is **one of the most
-useful skills** you can develop as a software developer!
+Close any open files.
 
 ## Task 2 - PizzaShares.java
 

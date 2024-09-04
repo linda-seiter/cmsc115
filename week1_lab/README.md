@@ -2,14 +2,13 @@
 
 ## Learning Objectives
 
-- Run a Java application
-- Run a Junit test
-- Modify a Java class
-- Use comments to document code
-- Comment out code to prevent execution
-- Apply rules of operator precedence
-- Fix common syntax errors
-- Create a new Java class
+- Run a Java class
+- Edit a Java class
+- Use single-line and multi-line (block) comments
+- Declare, initialize, and update a variable.
+- Use numeric operators in calculations.
+- Use a `Scanner` to read user input.
+- Identify and fix common syntax errors
 
 ## Setup
 
@@ -28,7 +27,7 @@ sidebar, or select View > Explorer from the top menu bar.
 Expand the `week1_lab > src > main` folders to list the Java files in the
 default package:
 
-<img alt="expland week1_lab, src, main folders" src="images/week1_lab.png" width="200" >
+<img alt="expand week1_lab, src, main folders" src="images/week1_lab.png" width="200" >
 
 ## Task 1 - CourseWelcome.java
 
@@ -48,118 +47,37 @@ public class CourseWelcome {
 }
 ```
 
-When the `main` method executes, the two print statements produce the following
-output:
+There are several ways to run the `main` method.
 
-```text
- Welcome to CMSC 115
- Let's learn Java!
-```
+|                                                                                               | Alternative ways to run `main`                              |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| <img alt="click run button above main signature" src="images/run_main.png" width="400" >      | Click `Run` above the main method signature.                |
+| <img alt="right-click class, Run Java" src="images/run_java.png" width="400" >                | Right-click on the Java file, then select `Run Java`.       |
+| <img alt="Run, Run without Debugging main menubar" src="images/run_menubar.png" width="400" > | Select `Run > Run Without Debugging` from the main menubar. |
 
-Let's execute the program and view the output. There are several ways you can
-run the program.
-
-|                                                                                               | Ways to Run a Java Program                                           |
-| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| <img alt="click run button above main signature" src="images/run_main.png" width="400" >      | Click `Run` above the main method signature                          |
-| <img alt="right-click class, Run Java" src="images/run_java.png" width="400" >                | Right-click in the Explorer on the Java file, then select `Run Java` |
-| <img alt="Run, Run without Debugging main menubar" src="images/run_menubar.png" width="400" > | Select `Run > Run Without Debugging` from the main menubar           |
-
-The program output is displayed in the terminal window.
+VS Code displays the console output in a terminal window, which is usually
+located at the bottom of the user interface.
 ![terminal output](images/terminal_output.png)
 
-### Testing a Java Program
+Many of the labs you'll do involve writing a program to produce some expected
+output. The current code produces the text shown in the "Actual Output" column
+below. However, assume the code should produce the text in the "Expected Output"
+column.
 
-Sometimes a program has an error and fails to produce the expected output. It is
-important to thoroughly test every Java class to find and fix bugs.
-[Junit](https://junit.org/junit5/) is a popular Java testing framework.
+| Expected Output                                                      | Actual Output                             |
+| -------------------------------------------------------------------- | ----------------------------------------- |
+| Welcome to CMCS 115 - Introductory Programming.<br>Let's learn Java! | Welcome to CMCS 115.<br>Let's learn Java! |
 
-Expand the `week1_lab > src > test` folder to list the Junit test files:
+When the actual output does not match the expected output, we need to fix the
+code:
 
-<img alt="expland week1_lab, src, test folders" src="images/test_folder.png" width="200" >
+1. Edit the first statement in the `main` method to print the character string
+   "Welcome to CMCS 115 - Introductory Programming.".
+2. Save your changes by selecting File > Save from the menu bar, or type Ctrl-S
+   (Windows/Linux) or Command-S (Mac).
+3. Run `CourseWelcome` and confirm the code produces the expected output.
 
-For each regular Java class, we use a separate Junit class to test the
-functionality.
-
-- Java class `CourseWelcome`
-- Junit test class `CourseWelcomeTest`
-
-The `CourseWelcomeTest` Junit class has a method that checks the output produced
-when `CourseWelcome` is executed. Don't worry about understanding the code in
-the Junit test class. We'll learn how to write Junit tests in a later lesson.
-
-NOTE: The `\n` in the expected output is a newline character. When your code
-calls `System.out.println`, the newline character is automatically appended to
-the contents.
-
-Let's practice running a Junit test. There are several different ways to run a
-Junit test class.
-
-- In the Explorer, right-click on `CourseWelcomeTest.java`, then select
-  `Run Java`.
-- In the Editor, click the green arrow run button displayed next to the class
-  header.
-- In the main menubar, select `Run > Run Without Debugging`.
-
-<img alt="Run Junit test" src="images/run_test.png" >
-
-Junit displays the test result in a new view at the bottom of the window. A
-green checkmark indicates the test was successful.
-
-![junit successful test result](images/test_success.png)
-
-Close any open files.
-
-## Task 2 - JavaFacts.java
-
-Click on `JavaFacts.java` to open the file in the editor.
-
-```java
-public class JavaFacts {
-
-    public static void main(String[] args) {
-        System.out.println("Java was initially named Oak.");
-        System.out.println("Java is a language.");
-    }
-
-}
-```
-
-`JavaFacts` should produce the expected output displayed below. However, the
-actual output produced by the current code differs from the expected output.
-
-| Expected Output                                                       | Actual Output                                        |
-| --------------------------------------------------------------------- | ---------------------------------------------------- |
-| Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
-
-1. Run the `JavaFacts` class. Notice the actual output does not match the
-   expected output.
-2. Run the Junit `JavaFactsTest` class. The test fails as indicates by the red X
-   next to the test method name. The difference between the expected and actual
-   output is displayed and highlighted.
-
-<img alt="test fails" src="images/test_fail.png" >
-
-Let's fix `JavaFacts` to produce the expected output.
-
-1. Edit the second statement in the `main` method to print the character string
-   "Java is an object-oriented language". Save your changes by selecting
-   `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or
-   `Command-S` (Mac).
-2. Run `JavaFacts` and view the output in the terminal window.
-3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
-   should see a green checkmark next to the test method.
-
-NOTE: VS Code displays a history of all test runs. The most recent successful
-test run is displayed on top, but you'll also see the old failed test run below
-it. You can clear the test history so you don't see older test runs by clicking
-the `Clear All Results` button.
-
-<img alt="clear test history" src="images/test_history.png"  width="200">
-
-Close any open files.
-
-## Task 3 - Comments.java
+## Task 2 - Comments.java
 
 Java comments can be used to help explain the code. A comment can also prevent
 one or more lines of code from executing.
@@ -171,8 +89,12 @@ Click on `Comments.java` to open the file in the editor, then run the program to
 view the output.
 
 ```java
+/**
+ * Comments class - demonstrate different types of Java comments.
+ *
+ * @Author first last
+ */
 public class Comments {
-
     public static void main(String[] args) {
 
         System.out.println("apple");
@@ -198,8 +120,9 @@ public class Comments {
 | ----------------------------------- | ------------------------------------ |
 | apple<br>pear<br>watermelon<br><br> | apple<br>pear<br>watermelon<br>peach |
 
-- The print statements for "orange", "lemon", and "banana" are commented out and
-  do not execute.
+- A line comment `//` prevents the print statement for "orange" from executing.
+- A block comment `/* */` prevents the print statements for "lemon" and "banana"
+  from executing.
 - The print statement for "pear" executes since `//` is placed _after_ the
   statement.
 
@@ -208,12 +131,29 @@ produce the expected output:
 
 1. Add `//` to comment out the last print statement (don't delete it!). Save the
    file.
-2. Run `Comments` to view the output.
-3. Run `CommentsTest` to confirm your solution passes the Junit test.
+2. Run `Comments` to confirm the expected output is produced.
 
 Save and close any open files.
 
-## Task 4 - Fixit.java
+### JavaDoc
+
+The `Comments` class contains a special type of block comment before the class
+header called a _JavaDoc_ comment. A Javadoc comment has an extra asterisk at
+the beginning `/**` and ends with `/`. For example:
+
+```java
+/**
+ * Comments class demonstrates different types of Java comments.
+ *
+ * @Author first last
+ */
+```
+
+JavaDoc is used to generate documentation in HTML format from Java source code.
+We'll learn more about JavaDoc in a later lesson, but it is a good idea to
+comment each class and method, and use special tags such as `@Author`.
+
+## Task 3 - Fixit.java
 
 Click on `Fixit.java` to open the file in the editor.
 
@@ -247,13 +187,13 @@ so the program does not produce the expected output.
 Every statement in the `main` method must end with a semicolon. Let's fix the
 syntax error so the program can execute.
 
-1. Add a semicolon to fix the syntax error. Save the file.
-2. Run `Fixit` to view the output.
-3. Run `FixitTest` to confirm your solution passes the Junit test.
+1. Add a semicolon to the end of the print statement to fix the syntax error.
+   Save the file.
+2. Run `Fixit` to confirm the expected output.
 
 Close any open files.
 
-## Task 5 - Printing.java
+## Task 4 - Printing.java
 
 Click on `Printing.java` to open the file in the editor.
 
@@ -286,77 +226,13 @@ output:
 
 1. Adjust the statement `System.out.print("pink ");` so a newline character is
    appended after printing "pink".
-2. Run `Printing` to view the output.
-3. Run `PrintingTest` to confirm your solution passes the Junit test.
+2. Run `Printing` to confirm the expected output.
 
 Save and close any open files.
 
-## Task 6 - SelfIntroduction.java
+## Task 5 - MathExpression.java
 
-Click on `SelfIntroduction.java` to open the file in the editor.
-
-```java
-/**
- * SelfIntroduction class demonstrates at least 4 print statements.
- *
- * @author First Last
- */
-public class SelfIntroduction {
-    public static void main(String[] args) {
-        // TODO: Add print statements
-
-    }
-}
-```
-
-The `SelfIntroduction` class contains a `main` method with an empty block for
-the method body. The class also contains JavaDoc comment before the class
-header. JavaDoc is used to generate documentation in HTML format from Java
-source code. We'll learn more about JavaDoc in a later lesson.
-
-1. Edit the JavaDoc comment to update the author tag with your first and last
-   name.
-2. Edit the `main` method to add print statements to introduce yourself. The
-   program should produce at least 4 lines of output.
-3. Run `SelfIntroduction` to view your output. Fix any syntax errors that may
-   arise.
-4. Run `SelfIntroductionTest` to confirm your solution passes the Junit test,
-   which is designed to count the number of lines of output.
-
-Save and close any open files.
-
-## Task 7 - MathematicalExpression.java
-
-A `String` is a sequence of characters surrounded by double quotes. An unquoted
-arithmetic expression evaluates to a numeric value.
-
-| Expression      |                               Value |
-| --------------- | ----------------------------------: |
-| "2 + 3 \* 8 = " | &nbsp; &nbsp; &nbsp;"2 + 3 \* 8 = " |
-| 2 + 3 \* 8 =    |                                  26 |
-
-In this task, you will create a new Java class named `MathExpression`, along
-with a new Junit test class named `MathExpressionTest`.
-
-1. In the Explorer, right-click on the "java" folder in
-   `week1_lab/src/main/java` and then select `New Java File > Class` from the
-   popup menu. IMPORTANT: Make sure you right clicked on the word "java" and not
-   "main", otherwise the new class will be created in the wrong folder.
-   <img src="images/new_class.png" alt="create new class" width="400">
-2. Enter the class name `MathExpression`. Spelling and case matter.
-
-   <img src="images/new_class_name.png" alt="create new class" width="200">
-
-3. The editor view will contain the new Java class. You should also see
-   `MathExpression.java` in the Explorer at the **same level of indentation** as
-   the other Java files. If not, right click to delete it and create it again,
-   or try dragging the file it into the `week1_lab/src/main/java` folder.
-
-   <img src="images/new_class_explorer_view.png" alt="new class in editor view" width=300>
-
-4. Edit the code to add a `main` method as shown below. Notice the first
-   statement prints a quoted string, while the second statement prints the value
-   of a math expression.
+Click on `MathExpression.java` to open it in the editor.
 
 ```java
 public class MathExpression {
@@ -367,70 +243,326 @@ public class MathExpression {
 }
 ```
 
-Run the program and confirm the output as shown below:
+A `String` is a sequence of characters surrounded by double quotes. An unquoted
+arithmetic expression evaluates to a numeric value.
 
-```text
-2 + 3 * 8 = 26
-```
+| Expression      | Value           |
+| --------------- | --------------- |
+| "2 + 3 \* 8 = " | "2 + 3 \* 8 = " |
+| 2 + 3 \* 8 =    | 26              |
 
-Assume we would like to evolve the program to produce the expected output shown
-below:
+Run `MathExpression` to view the output. Assume we would like to evolve the
+program to produce the expected output shown below:
 
 | Expected Output   | Actual Output   |
 | ----------------- | --------------- |
 | (2 + 3) \* 8 = 40 | 2 + 3 \* 8 = 26 |
 
-1. Adjust the 2 print statements to produce the expected output, adding
-   parenthesis to both the string and the math expression to force `+` to be
+1. Adjust the 2 print statements to produce the expected output. You need to add
+   parenthesis in both the string and the math expression to force `+` to be
    performed before `*`.
-2. Run `MathExpression` to view the output.
+2. Run `MathExpression` to confirm the expected output.
 
-Let's also create a Junit class named `MathExpressionTest` to ensure
-`MathExpression` produces the correct output.
+Save and close any open files.
 
-1. In the Explorer, right-click on the "java" folder in
-   `week1_lab/src/test/java` and then select `New Java File > Class` from the
-   popup menu. Enter the class name `MathExpressionTest`.
-   <img src="images/new_test_class.png" alt="create new test class" width="400">
-2. You should see `MathExpressionTest.java` in `test/java` subfolder along with
-   the other Junit test classes. You can drag the file to this folder if you
-   accidentally created it in another folder.
-   <img src="images/new_test_explorer_view.png" alt="create new test class" width="400">
+## Task 6 - Paycheck.java
 
-3. Edit `MathExpressionTest` as shown below. The class has one test method named
-   `mainOutputTest`. The test executes the `main` method in `MathExpression` and
-   checks if the expected output and actual output match. Don't worry about
-   understanding all of the test code. We'll learn more about Junit tests in a
-   later lesson.
+Click on `Paycheck.java` to open the file in the editor.
 
 ```java
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
+/**
+ * Paycheck class - debugging sample to demonstrate variables in memory
+ * @author First Last
+ */
+public class Paycheck {
+	public static void main(String[] args) {
+		//Declare and initialize variables
+		double hourlyRate = 18.25;
+		int hoursWorked = 35;
+		double pay = hoursWorked * hourlyRate;
 
-class MathExpressionTest {
+		//Print initial values
+		System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
 
-    @Test
-    @DisplayName("MathExpression.main prints correct output")
-    void mainOutputTest() throws Exception {
-      // Define the expected output
-        String expectedOutput = "(2 + 3) * 8 = 40\n";
+		//Assign hoursWorked to 39, recalculate pay
+		hoursWorked = 39;
+		pay = hoursWorked * hourlyRate;
 
-        // Capture the actual output from MathExpression.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            MathExpression.main(new String[] {});
-        });
+		//Print updated values
+		System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
 
-        // Compare expected vs actual output
-        assertEquals(expectedOutput, actualOutput);
-    }
+		//TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50, recalculate pay
 
+		//TODO: Print updated values
+
+	}
 }
 ```
 
-Run `MathExpressionTest` to confirm your solution passes the Junit test.
+Execute the program and view the output.
+
+```text
+Week#1 hours: 35 rate: $18.25 pay: $638.75
+Week#2 hours: 39 rate: $18.25 pay: $711.75
+```
+
+- A **variable** is a name associated with a memory location.
+- A **variable declaration** allocates memory to store a value.
+
+Each variable declaration must specify a data type such as `int` or `double`,
+along with the variable name. Once a variable is declared, it can be assigned an
+initial value. The declaration and initialization can be done in one statement
+or two as shown below.
+
+| One Statement                                | Two Statements                                                            |
+| -------------------------------------------- | ------------------------------------------------------------------------- |
+| int hoursWorked = 35; //declare & initialize | int hoursWorked; &nbsp; &nbsp;//declare<br>hoursWorked = 35; //initialize |
+
+A variable is declared only once within a block such as a method body. However,
+it can be assigned a value several times.
+
+Let's use the debugger to step through the program one line of code at a time.
+
+Debugging shows how variables are declared, initialized, and updated in memory.
+
+<table>
+
+<tr>
+<td>
+<img src = "images/set_breakpoint.png" alt="click in line 9 gutter to set breakpoint" width=300>
+</td>
+<td>
+Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.  A breakpoint is indicated by a small circle.  You can remove a breakpoint by clicking on it again.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/debug_button.png" alt="debug button on menubar" width=200>
+</td>
+<td>
+There are several ways to start the debugger:<br>
+- Click the "Debug" button above the class header. <br>
+- Right-click Paycheck.java, then select "Debug Java".<br>
+- Select "Run > Start Debugging" from the main menubar.
+</td>
+</tr>
+</table>
+
+The main method is called and stops execution at the breakpoint, i.e. line 9. If
+the program doesn't stop at line 9, you might not have set the breakpoint.
+
+<img src = "images/debug_perspective.png" alt="debug perspective" width=600>
+
+- Line 9 is highlighted and there is a red arrow in the gutter, indicating the
+  current line of execution.
+- The **variables view** will display the variables stored in memory for the
+  current method.
+- The menubar displays new buttons to control the debugging session.
+
+<img src = "images/debug_controls.png" alt="debug perspective" width=300>
+
+Let's use the "Step Over" button to execute one line of code at a time and
+observe how each statement impacts the variables stored in memory. The "Step
+Over" button is second in the menubar. You can also press F10 to execute the
+current line of code.
+
+<table>
+
+<tr>
+<th>
+Step Over or F5
+</th>
+<th>
+Line Of Execution
+</th>
+<th>
+Variables View
+</th>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over or f5" width=50>
+</td>
+<td>
+<code>double hourlyRate = 18.25;</code>
+</td>
+<td>
+<code>hourlyRate</code> allocated and initialized in memory
+<img src = "images/stepover_line9.png" alt="line 9 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>int hoursWorked = 35;</code></td>
+<td>
+<code>hoursWorked</code> allocated and initialized in memory
+<img src = "images/stepover_line10.png" alt="line 10 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over and other debug icons" width=50></td>
+<td>
+<code>double pay = hoursWorked * hourlyRate;</code></td>
+<td>
+<code>pay</code> allocated and initialized in memory<br>
+<img src = "images/stepover_line11.png" alt="line 11 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
+<td>
+variables are accessed from memory
+<img src = "images/stepover_line14.png" alt="line 14 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>hoursWorked = 39;</code></td>
+<td>
+<code>hoursWorked</code> updated in memory
+<img src = "images/stepover_line17.png" alt="line 17 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>pay = hoursWorked * hourlyRate;</code></td>
+<td>
+<code>pay</code> updated in memory
+<img src = "images/stepover_line18.png" alt="line 18 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>
+System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
+<td>
+variables accessed from memory 
+<img src = "images/stepover_line21.png" alt="line 21 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/terminate.png" alt="step over" width=50>
+</td>
+<td colspan="2">
+We've reached the end of the main method.  Press the red square to stop the debug session, or press Shift-F5.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/explorer.png" alt="step over" width=50>
+</td>
+<td colspan="2">
+If you don't see the Explorer view with your lab files, click the Explorer icon in the activity bar.
+</td>
+</tr>
+
+</table>
+
+Now that you've seen how variables are initialized and updated in memory, update
+the `main` method as follows:
+
+- Add statements to update `hoursWorked` and `hourlyRate` and recalculate `pay`
+  for week#3.
+- Print the updated variable values. The expected output is displayed below:
+
+```text
+Week#1 hours: 35 rate: $18.25 pay: $638.75
+Week#2 hours: 39 rate: $18.25 pay: $711.75
+Week#3 hours: 27 rate: $18.75 pay: $506.25
+```
+
+Run `Paycheck` and confirm the expected output. Use the debugger to find and fix
+any errors.
 
 Save and close any open files.
+
+NOTE: Aside from visualizing variables in memory, you can use the debugger to
+step through your code to find logic errors. Debugging is **one of the most
+useful skills** you can develop as a software developer!
+
+## Task 7 - Rectangle.java
+
+Click on `Rectangle.java` to open the file in the editor.
+
+```java
+import java.util.Scanner;
+
+/**
+ * Rectangle class - demonstrate initializing variables from console input
+ *
+ * @author First Last
+ */
+public class Rectangle {
+    public static void main(String[] args) {
+        // Declare and initialize Scanner for reading input from console
+        Scanner input = new Scanner(System.in);
+
+        // Prompt for length and width
+        System.out.print("Enter length and width: ");
+
+        // Declare width and initialize from the console input
+        double length = input.nextDouble();
+
+        // Declare width and initialize from the console input
+        double width = input.nextDouble();
+
+        // TODO: Declare area and initialize using width and height
+
+        // TODO: Update to also print area
+        System.out.println("length=" + length + " width=" + width);
+
+    }
+}
+```
+
+The program uses a `Scanner` to read user input and initialize the `length` and
+`width` variables of a rectangle.
+
+When you run the `Rectangle` class, the program displays the prompt "Enter
+length and width: " and then waits until you enter two double values in the
+terminal window.
+
+<img src="images/console_input.png" alt="enter user input in the terminal window">
+
+The program should calculate and print the length, width, and area of the
+rectangle. However, it only prints the length and width.
+
+| Expected Input/Output                                                    | Actual Input/Output                                            |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 |
+
+1. Update the `main` method to declare a variable named `area`. Calculate the
+   area using the given width and length. Update the print statement to display
+   the length, width, and area as shown in the expected output.
+2. Run `Rectangle` several times, passing different input values for length and
+   width.
+
+| Sample Run#1                                                             | Sample Run#2                                                                   |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>10.25 2.5</b><br>length=10.25 width=2.5 area=25.625 |
 
 ## Submit Your Solution
 
@@ -439,3 +571,15 @@ and select "Close All". You will be prompted if there are unsaved changes.
 **Save your changes before submitting.**
 
 TODO: Instructions on submitting
+
+<div class="hideme">
+   <style>
+      th,td {
+         border: 1px solid black;
+         padding: 5px;
+      }
+      .hideme {
+         display:none;
+      }
+   </style>
+</div>

@@ -6,7 +6,7 @@ class CommentsTest {
 
     @Test
     @DisplayName("Comments.main prints correct output")
-    void mainOutputTest() throws Exception {
+    void commentsOutput() throws Exception {
         String expectedOutput = "apple\n"
                 + "pear\n"
                 + "watermelon\n";

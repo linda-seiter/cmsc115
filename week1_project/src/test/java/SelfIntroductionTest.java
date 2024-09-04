@@ -6,7 +6,7 @@ class SelfIntroductionTest {
 
     @Test
     @DisplayName("SelfIntroduction.main prints at least 4 lines of output")
-    void mainOutputTest() throws Exception {
+    void selfIntro4LinesOutput() throws Exception {
 
         // Capture the output from SelfIntroduction.main
         String actualOutput = tapSystemOutNormalized(() -> {

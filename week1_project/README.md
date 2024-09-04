@@ -7,53 +7,36 @@ to list the Java classes and corresponding Junit test classes.
 
 <img alt="expland week1_project, src, main folders" src="images/week1_project_files.png" width="200" >
 
-## Task 1 - Poem.java
+## Task 1 - SelfIntroduction.java
 
-Click on `Poem.java` to open it in the editor:
+Click on `SelfIntroduction.java` to open the file in the editor.
 
 ```java
 /**
- * Poem class demonstrates printing text to the console.
+ * SelfIntroduction class demonstrates at least 4 print statements.
+ *
  * @author First Last
  */
-public class Poem {
+public class SelfIntroduction {
     public static void main(String[] args) {
-        // TODO: Add statements to generate a poem
+        // TODO: Add print statements
 
     }
 }
 ```
 
-1. Edit the JavaDoc to update the author tag with your name.
-2. Edit the `main` method to add print statements to generate a poem with at
-   least 10 lines of output. You may create your own poem or use an existing
-   one. Include a title and author. Experiment with adding extra white space in
-   between or within the lines of the poem. You can simply add extra spaces
-   within a string, or try adding a tab character \t. A sample children's poem
-   that uses white space is shown below.
+The `SelfIntroduction` class contains a `main` method with an empty block for
+the method body. The class also contains a JavaDoc comment before the class
+header.
 
-```text
-    I LIKE STARS
+1. Edit the JavaDoc comment to update the author tag with your first and last
+   name.
+2. Edit the `main` method to add print statements to introduce yourself. The
+   program should produce **at least 4** lines of output.
+3. Run `SelfIntroduction` to confirm your program prints at least 4 lines of
+   output.
 
-           Blue stars,
-        Red stars,
-  Green stars,too.
-
-I like purple stars.
-How about you?
-
-           Orange stars,
-        Pink stars,
-  Yellow stars,too.
-
-I like rainbow stars.
-How about you?
-
-        PAMELA JOHNSON
-```
-
-3.  Run `PoemTest` to confirm your solution passes the Junit test. The test is
-    designed to count the number of lines of output.
+Save your file.
 
 ## Task 2 - BillSplitter.java
 
@@ -83,13 +66,12 @@ formula shown below.
 Run the program to view the output. The second print statement has a couple of
 errors that prevent the program from producing the expected output.
 
-| Expected Output                       | Actual Output                              |
-| ------------------------------------- | ------------------------------------------ |
-| Each person owes: 56.52 &nbsp; &nbsp; | Each person owes: 94.20 + 94.20 \* 0.2 / 2 |
+| Expected Output         | Actual Output                              |
+| ----------------------- | ------------------------------------------ |
+| Each person owes: 56.52 | Each person owes: 94.20 + 94.20 \* 0.2 / 2 |
 
-1. Edit the `main` method to fix the errors.
-2. Run `BillSplitter` to view the output.
-3. Run `BillSplitterTest` to confirm your solution passes the Junit tests.
+1. Edit the second print statement to fix the errors.
+2. Run `BillSplitter` to confirm the expected output.
 
 HINT: Recall operator precedence and the default order of operations:
 
@@ -97,10 +79,57 @@ HINT: Recall operator precedence and the default order of operations:
 2. Multiplication and Division
 3. Addition and Subtraction
 
+Save your file.
+
+## Task 3
+
+Click on `GasFillup.java` to open the file in the editor.
+
+```java
+import java.util.Scanner;
+
+/**
+ * GasFillup class - demonstrate initializing variables from console input
+ *
+ * @author First Last
+ */
+public class GasFillup {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // TODO
+
+    }
+}
+```
+
+Edit the `main` method to prompt the user to enter the number of gallons and the
+price per gallon of gas. Declare appropriate variables to store the user input,
+then calculate and print the cost as shown in the sample runs below.
+
+| Sample Run#1                                                            | Sample Run#2                                                         |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Enter gallons and price per gallon: <b>12.5 3.50</b><br> You owe $43.75 | Enter gallons and price per gallon: <b>8.0 3.75</b><br>You owe $30.0 |
+
+Save your file.
+
 ## Submit Your Solution
+
+**Save your changes before submitting.**
 
 If there are any open files in the editor window, right-click on one of the tabs
 and select "Close All". You will be prompted if there are unsaved changes.
-**Save your changes before submitting.**
 
 TODO: Instructions on submitting
+
+<div class="hideme">
+   <style>
+      th,td {
+         border: 1px solid black;
+         padding: 5px;
+      }
+      .hideme {
+         display:none;
+      }
+   </style>
+</div>
