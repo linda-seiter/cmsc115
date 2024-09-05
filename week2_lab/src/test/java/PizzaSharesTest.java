@@ -6,7 +6,7 @@ public class PizzaSharesTest {
 
     @Test
     @DisplayName("PizzaShares.main prints correct output for input: 24 10")
-    public void mainIOTest1() throws Exception {
+    public void slices_24_people_10() throws Exception {
 
         String input = "24 10";
         String expectedOutput = "Enter #slices and #people: "
@@ -26,7 +26,7 @@ public class PizzaSharesTest {
 
     @Test
     @DisplayName("PizzaShares.main prints correct output for input: 12 4")
-    public void mainIOTest2() throws Exception {
+    public void slices_12_people_4() throws Exception {
         String input = "12 4";
         String expectedOutput = "Enter #slices and #people: "
                 + "Each person gets 3 slices.\n"

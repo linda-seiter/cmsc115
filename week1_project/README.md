@@ -119,6 +119,8 @@ public class GasPurchase {
 2. Edit the `main` method to prompt the user to enter the number of gallons and
    the price per gallon of gas. Declare appropriate variables to store the user
    input, then calculate and print the cost as shown in the sample runs below.
+3. Run `GasPurchase` several times and confirm the expected output given the
+   input values as shown in the sample runs.
 
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |

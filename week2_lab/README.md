@@ -77,10 +77,11 @@ the contents.
 Let's practice running a Junit test. There are several different ways to run a
 Junit test class.
 
-- In the Explorer, right-click on `HelloTest.java`, then select `Run Java`.
-- In the Editor, click the green arrow run button displayed next to the class
-  header.
-- In the main menubar, select `Run > Run Without Debugging`.
+- Option 1: In the Explorer, right-click on `HelloTest.java`, then select
+  `Run Java`.
+- Option 2: In the Editor, click the green arrow run button displayed next to
+  the class header.
+- Option 3: In the main menubar, select `Run > Run Without Debugging`.
 
 ![run junit test](images/run_test.png)
 
@@ -118,19 +119,17 @@ actual output produced by the current code differs from the expected output.
 
 1. Run the `JavaFacts` class. Notice the actual output does not match the
    expected output.
-2. Run the `JavaFactsTest` Junit class. The test fails as indicates by the red X
-   next to the test method name, along with the error messages displayed in the
-   "TEST RESULTS" window. A table showing the difference between the expected
-   and actual output is displayed in a popup window.
+2. Run the `JavaFactsTest` Junit class. The test fails as indicated by the red X
+   next to the test run, along with the error messages displayed in the "TEST
+   RESULTS" window (scroll through the error messages). A popup window shows the
+   difference between the expected and actual output.
 
 ![test fails](images/test_fail.png)
 
 Let's fix `JavaFacts` to produce the expected output.
 
 1. Edit the second statement in the `main` method to print the character string
-   "Java is an object-oriented language". Save your changes by selecting
-   `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or
-   `Command-S` (Mac).
+   "Java is an object-oriented language". Save your changes.
 2. Run `JavaFacts` and view the output in the terminal window.
 3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
    should see a green checkmark next to the test method.
@@ -215,8 +214,9 @@ leftover?
 </table>
 
 1. Update the program to use Java's modulo (remainder) operator to calculate and
-   print the leftover slices as shown in the sample runs tomorrow.
-2. Run `PizzaShares` several times, passing different input values.
+   print the leftover slices as shown in the sample runs below.
+2. Run `PizzaShares` several times, passing different input values and
+confirming the expected output.
 <table>
 <tr>
 <th>Sample Run#1</th><th>Sample Run#2</th>
@@ -230,6 +230,7 @@ Each person gets 3 slices.<br>
 There are 0 slices remaining.</td>
 </tr>
 </table>
+
 3. Run `PizzaSharesTest` to confirm your solution passes the Junit tests. Note
    there are two test methods, each checking a different set of inputs. You'll
    should see multiple test results displayed.
@@ -306,12 +307,11 @@ Remove the comment character on line 23.
 <img src = "images/error_gpa.png" alt="error redeclared gpa" width=500>
 </td>
 <td>
-The variable <code>gpa</code> is underlined in red to indicate an error.
+The variable <code>gpa</code> is underlined in red to indicate an error. Hover the mouse over the error.
 
-Hover the mouse over the error.
+A message "Duplicate local variable gpa" is displayed.
 
-A message "Duplicate local variable gpa". The variable was already declared on
-line 9.
+The variable `gpa` was previously declared on line 9.
 
 </td>
 </tr>
@@ -321,18 +321,21 @@ line 9.
 <img src = "images/run_error_gpa.png" alt="run exception message" width=500>
 </td>
 <td>
-Try to run the program. It crashes due to the compilation problem.
+Try to run the program.
+
+It crashes due to the duplicate variable declaration.
 
 </td>
 </tr>
 
 </table>
 
-Let's fix the error. Line 23 should assign `gpa` to 4.0 **without** redeclaring
-the variable.
+Let's fix the error.
+
+Line 23 should assign `gpa` to 4.0 **without** redeclaring the variable.
 
 1. Remove the type `double` on line 23 to prevent a duplicate variable
-   declaration <code>gpa = 4.0;</code>. The compiler error should go away.
+   declaration. The compiler error should go away.
 2. Run `StudentInfo` to view the output.
 3. Run `StudentInfoTest` to confirm your solution passes the Junit test.
 
