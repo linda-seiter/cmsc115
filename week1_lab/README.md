@@ -12,6 +12,9 @@
 
 ## Setup
 
+NOTE: Instructions for accessing VS Code on Mars and/or setting VS Code on local
+machine will be provided in a separate document.
+
 VS Code is a powerful interactive development environment (IDE) whose primary
 purpose is to serve as a code editor. The basic user interface includes a
 explorer on the left that lists files and folders, and an editor on the right
