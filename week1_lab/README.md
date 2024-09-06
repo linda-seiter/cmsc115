@@ -226,8 +226,7 @@ Run the program to view the output. In the expected output, "yellow" appears on
 a separate line from "pink". Let's fix the program to produce the expected
 output:
 
-1. Adjust the statement `System.out.print("pink ");` so a newline character is
-   appended after printing "pink".
+1. Adjust the code so a newline character is appended after printing "pink".
 2. Run `Printing` to confirm the expected output.
 
 Save and close any open files.
@@ -251,7 +250,7 @@ arithmetic expression evaluates to a numeric value.
 | Expression      | Value           |
 | --------------- | --------------- |
 | "2 + 3 \* 8 = " | "2 + 3 \* 8 = " |
-| 2 + 3 \* 8 =    | 26              |
+| 2 + 3 \* 8      | 26              |
 
 Run `MathExpression` to view the output. Assume we would like to evolve the
 program to produce the expected output shown below:
