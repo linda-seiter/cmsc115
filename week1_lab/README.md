@@ -505,7 +505,7 @@ Save and close any open files.
 
 NOTE: Aside from visualizing variables in memory, you can use the debugger to
 step through your code to find logic errors. Debugging is **one of the most
-useful skills** you can develop as a software developer!
+useful skills** you can acquire as a software developer!
 
 ## Task 7 - Rectangle.java
 
